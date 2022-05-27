@@ -14,8 +14,14 @@ require_once '../conexion.php';
         echo $rows[7];
 
          if ($rows[7]=='admin') {
+        
+            session_start();
+            $_SESSION['user'] = $rows[5];
+
             header("Location: ../views/homeadmin.php");
+           
          }else {
+           
             header("Location: ../views/homeuser.php");
          }
        

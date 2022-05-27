@@ -1,6 +1,10 @@
-<?php require_once 'header.php';?>
-
-    <div class="content contentindex">
+<?php
+if (isset($_SESSION['user'])) {
+    header("Location: ../views/homeadmin.php");
+}else{ 
+    require_once 'header.php';
+?>
+ <div class="content contentindex">
         <div class="row">
             <div class="col-sm-6">
                 <div class="card">
@@ -22,4 +26,7 @@
             </div>
         </div>
     </div>
-    <?php require_once 'footer.php';?>
+
+<?php
+require_once 'footer.php';
+}?>
